@@ -26,7 +26,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-20 md:py-28">
+      <section className="pt-20 md:pt-28 pb-10 md:pb-14">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10">
           <div className="max-w-3xl">
             <SectionHeading title="Наша миссия" />

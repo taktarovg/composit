@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function AboutSection() {
@@ -44,22 +45,14 @@ export function AboutSection() {
           {/* Visual */}
           <ScrollReveal delay={0.2} direction="right">
             <div className="relative">
-              <div className="bg-gradient-to-br from-primary-100 to-primary-50 rounded-3xl p-10 aspect-square flex items-center justify-center">
-                {/* Puzzle visual */}
-                <div className="grid grid-cols-2 gap-3 w-48 h-48 md:w-64 md:h-64">
-                  <div className="bg-accent-500 rounded-2xl flex items-center justify-center shadow-lg">
-                    <span className="text-white/30 text-4xl">&#10047;</span>
-                  </div>
-                  <div className="bg-primary-500 rounded-2xl flex items-center justify-center shadow-lg">
-                    <span className="text-white/30 text-4xl">&#9883;</span>
-                  </div>
-                  <div className="bg-green-500 rounded-2xl flex items-center justify-center shadow-lg">
-                    <span className="text-white/30 text-4xl">&#9880;</span>
-                  </div>
-                  <div className="bg-gold-500 rounded-2xl flex items-center justify-center shadow-lg">
-                    <span className="text-white/30 text-4xl">&#9733;</span>
-                  </div>
-                </div>
+              <div className="bg-gradient-to-br from-primary-50 to-white rounded-3xl p-10 aspect-square flex items-center justify-center">
+                <Image
+                  src="/images/logos/main-logo.png"
+                  alt="ХимСнаб Композит"
+                  width={400}
+                  height={400}
+                  className="w-3/4 h-auto object-contain"
+                />
               </div>
 
               {/* Floating badge */}

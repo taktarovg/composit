@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Phone, Mail, Send, MessageCircle } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, Send } from "lucide-react";
 import { COMPANY, GROUP_COMPANIES, NAV_ITEMS } from "@/lib/constants";
 
 export function Footer() {
@@ -9,19 +10,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Column 1: Logo & Legal */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="grid grid-cols-2 gap-0.5 w-9 h-9">
-                <div className="bg-accent-500 rounded-sm" />
-                <div className="bg-primary-500 rounded-sm" />
-                <div className="bg-green-500 rounded-sm" />
-                <div className="bg-gold-500 rounded-sm" />
-              </div>
-              <div className="leading-tight">
-                <span className="text-base font-bold block">ХИМСНАБ</span>
-                <span className="text-xs text-neutral-300 block">
-                  группа компаний
-                </span>
-              </div>
+            <div className="mb-6">
+              <Image
+                src="/images/logos/main-logo.png"
+                alt="ХимСнаб Композит"
+                width={160}
+                height={44}
+                className="h-11 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-sm text-neutral-300 leading-relaxed">
               {COMPANY.legalName}
@@ -93,15 +89,6 @@ export function Footer() {
 
             {/* Social icons */}
             <div className="flex items-center gap-3 mt-6">
-              <a
-                href={COMPANY.socials.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-neutral-600 flex items-center justify-center hover:bg-green-500 transition-colors"
-                aria-label="WhatsApp"
-              >
-                <MessageCircle className="w-5 h-5" />
-              </a>
               <a
                 href={COMPANY.socials.telegram}
                 target="_blank"

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { Menu, X, Search, Phone } from "lucide-react";
 import { NAV_ITEMS, COMPANY } from "@/lib/constants";
 
@@ -32,24 +33,15 @@ export function Header() {
       <div className="mx-auto max-w-[1440px] px-5 md:px-10">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0">
-            <div className="flex items-center gap-2">
-              {/* Puzzle icon placeholder — replace with actual SVG logo */}
-              <div className="grid grid-cols-2 gap-0.5 w-10 h-10">
-                <div className="rounded-tl-md bg-accent-500 rounded-sm" />
-                <div className="rounded-tr-md bg-primary-500 rounded-sm" />
-                <div className="rounded-bl-md bg-green-500 rounded-sm" />
-                <div className="rounded-br-md bg-gold-500 rounded-sm" />
-              </div>
-              <div className="leading-tight">
-                <span className="text-lg font-bold text-neutral-600 tracking-tight block">
-                  ХИМСНАБ
-                </span>
-                <span className="text-lg font-bold text-neutral-600 tracking-tight block">
-                  КОМПОЗИТ
-                </span>
-              </div>
-            </div>
+          <Link href="/" className="shrink-0">
+            <Image
+              src="/images/logos/main-logo.png"
+              alt="ХимСнаб Композит"
+              width={180}
+              height={50}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

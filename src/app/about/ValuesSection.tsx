@@ -26,7 +26,7 @@ const values = [
 
 export function ValuesSection() {
   return (
-    <section className="py-20 md:py-28 bg-neutral-50">
+    <section className="pt-10 md:pt-14 pb-20 md:pb-28 bg-neutral-50">
       <div className="mx-auto max-w-[1440px] px-5 md:px-10">
         <SectionHeading title="Наши ценности" centered />
 
