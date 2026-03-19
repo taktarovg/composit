@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@source "../../src";
+
+/* ============================
+   ГК «ХимСнаб Композит» — Design Tokens
+   ============================ */
+
+@theme {
+  /* Primary (Teal) */
+  --color-primary-50: #e6f5f7;
+  --color-primary-100: #b3e0e5;
+  --color-primary-200: #80cbd3;
+  --color-primary-300: #4db6c1;
+  --color-primary-400: #26a6b2;
+  --color-primary-500: #1896a3;
+  --color-primary-600: #147b86;
+  --color-primary-700: #0f5f69;
+  --color-primary-800: #0b434c;
+  --color-primary-900: #06282f;
+
+  /* Accent (Coral-Red) */
+  --color-accent-50: #fbeae7;
+  --color-accent-100: #f2c4bc;
+  --color-accent-200: #e99d91;
+  --color-accent-300: #e07766;
+  --color-accent-400: #d9654e;
+  --color-accent-500: #d25646;
+  --color-accent-600: #b84a3d;
+  --color-accent-700: #9e3e34;
+  --color-accent-800: #84332b;
+  --color-accent-900: #5a2219;
+
+  /* Neutral (Dark Gray) */
+  --color-neutral-50: #f7f8f9;
+  --color-neutral-100: #e8e8e8;
+  --color-neutral-200: #d1d1d2;
+  --color-neutral-300: #a5a5a6;
+  --color-neutral-400: #787879;
+  --color-neutral-500: #4b4c4c;
+  --color-neutral-600: #3d3d3d;
+  --color-neutral-700: #2e2e2e;
+  --color-neutral-800: #1f1f1f;
+  --color-neutral-900: #111111;
+
+  /* Secondary */
+  --color-green-500: #95ab63;
+  --color-green-300: #c5d4a6;
+  --color-gold-500: #d0a823;
+  --color-gold-300: #e8d891;
+
+  /* Font families */
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* ============================
+   Base styles
+   ============================ */
+
+body {
+  background-color: var(--color-neutral-50);
+  color: var(--color-neutral-500);
+  font-family: var(--font-body);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-primary-900);
+}
