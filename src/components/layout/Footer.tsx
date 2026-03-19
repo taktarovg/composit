@@ -14,9 +14,9 @@ export function Footer() {
               <Image
                 src="/images/logos/main-logo.png"
                 alt="ХимСнаб Композит"
-                width={160}
-                height={44}
-                className="h-11 w-auto brightness-0 invert"
+                width={240}
+                height={66}
+                className="h-16 w-auto brightness-0 invert"
               />
             </div>
             <p className="text-sm text-neutral-300 leading-relaxed">

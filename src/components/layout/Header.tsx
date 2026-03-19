@@ -31,15 +31,15 @@ export function Header() {
       }`}
     >
       <div className="mx-auto max-w-[1440px] px-5 md:px-10">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link href="/" className="shrink-0">
             <Image
               src="/images/logos/main-logo.png"
               alt="ХимСнаб Композит"
-              width={180}
-              height={50}
-              className="h-12 w-auto"
+              width={270}
+              height={75}
+              className="h-[72px] w-auto"
               priority
             />
           </Link>

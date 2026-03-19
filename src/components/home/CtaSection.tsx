@@ -10,46 +10,49 @@ const ctaCards = [
     description: "Оптовые поставки, гибкая оплата, скидки до 30%",
     href: "/b2b",
     icon: Briefcase,
-    accent: "text-primary-500",
-    bg: "bg-primary-50/70",
-    border: "border-primary-100",
-    hoverBorder: "hover:border-primary-300",
-    iconBg: "bg-primary-100",
+    variant: "primary" as const,
   },
   {
     title: "Приглашение на торги",
     description: "ГОЗ, закрытые и открытые процедуры",
     href: "/goz",
     icon: FileCheck,
-    accent: "text-green-600",
-    bg: "bg-green-50/50",
-    border: "border-green-100",
-    hoverBorder: "hover:border-green-300",
-    iconBg: "bg-green-100",
+    variant: "graphite" as const,
   },
   {
     title: "Деятельность",
     description: "Выставки, образование, социальная ответственность",
     href: "/activities",
     icon: Lightbulb,
-    accent: "text-accent-500",
-    bg: "bg-accent-50/50",
-    border: "border-accent-100",
-    hoverBorder: "hover:border-accent-300",
-    iconBg: "bg-accent-100",
+    variant: "primary" as const,
   },
   {
     title: "Контакты",
     description: "9 филиалов, офисы и склады",
     href: "/contacts",
     icon: MapPin,
-    accent: "text-gold-500",
-    bg: "bg-yellow-50/50",
-    border: "border-yellow-100",
-    hoverBorder: "hover:border-yellow-300",
-    iconBg: "bg-yellow-100",
+    variant: "graphite" as const,
   },
 ];
+
+const variants = {
+  primary: {
+    bg: "bg-primary-50/60",
+    border: "border-primary-100",
+    hoverBorder: "hover:border-primary-300",
+    iconBg: "bg-primary-100",
+    iconColor: "text-primary-600",
+    arrow: "group-hover:border-primary-300 group-hover:text-primary-500",
+  },
+  graphite: {
+    bg: "bg-neutral-50/80",
+    border: "border-neutral-200",
+    hoverBorder: "hover:border-neutral-400",
+    iconBg: "bg-neutral-200",
+    iconColor: "text-neutral-600",
+    arrow: "group-hover:border-neutral-400 group-hover:text-neutral-600",
+  },
+};
 
 export function CtaSection() {
   return (
@@ -65,31 +68,34 @@ export function CtaSection() {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {ctaCards.map((card, i) => (
-            <ScrollReveal key={card.title} delay={i * 0.1}>
-              <Link
-                href={card.href}
-                className={`group block rounded-2xl ${card.bg} border ${card.border} ${card.hoverBorder} p-7 min-h-[220px] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]`}
-              >
-                <div>
-                  <div
-                    className={`w-11 h-11 rounded-xl ${card.iconBg} flex items-center justify-center mb-5`}
-                  >
-                    <card.icon className={`w-5 h-5 ${card.accent}`} />
+          {ctaCards.map((card, i) => {
+            const v = variants[card.variant];
+            return (
+              <ScrollReveal key={card.title} delay={i * 0.1}>
+                <Link
+                  href={card.href}
+                  className={`group block rounded-2xl ${v.bg} border ${v.border} ${v.hoverBorder} p-7 min-h-[220px] flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]`}
+                >
+                  <div>
+                    <div
+                      className={`w-11 h-11 rounded-xl ${v.iconBg} flex items-center justify-center mb-5`}
+                    >
+                      <card.icon className={`w-5 h-5 ${v.iconColor}`} />
+                    </div>
+                    <h3 className="text-base font-bold text-neutral-600 mb-2">
+                      {card.title}
+                    </h3>
+                    <p className="text-sm text-neutral-400 leading-relaxed">
+                      {card.description}
+                    </p>
                   </div>
-                  <h3 className="text-base font-bold text-neutral-600 mb-2">
-                    {card.title}
-                  </h3>
-                  <p className="text-sm text-neutral-400 leading-relaxed">
-                    {card.description}
-                  </p>
-                </div>
-                <div className="w-8 h-8 rounded-full border border-neutral-200 flex items-center justify-center mt-6 group-hover:border-primary-300 group-hover:bg-white transition-all">
-                  <ArrowRight className="w-4 h-4 text-neutral-300 group-hover:text-primary-500 transition-colors" />
-                </div>
-              </Link>
-            </ScrollReveal>
-          ))}
+                  <div className={`w-8 h-8 rounded-full border border-neutral-200 flex items-center justify-center mt-6 ${v.arrow} group-hover:bg-white transition-all`}>
+                    <ArrowRight className="w-4 h-4 text-neutral-300 transition-colors" />
+                  </div>
+                </Link>
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </section>

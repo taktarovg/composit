@@ -24,19 +24,16 @@ export function CompaniesSection() {
                 target={company.external ? "_blank" : undefined}
                 className="group block rounded-2xl border border-neutral-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] shadow-[0_4px_16px_rgba(0,0,0,0.06)] h-full"
               >
-                <div className="w-16 h-16 rounded-xl bg-neutral-50 flex items-center justify-center mb-5 p-2">
+                <div className="h-20 flex items-center mb-5">
                   <Image
                     src={company.logo}
                     alt={company.name}
-                    width={48}
-                    height={48}
-                    className="w-full h-full object-contain"
+                    width={200}
+                    height={60}
+                    className="h-14 w-auto object-contain"
                   />
                 </div>
 
-                <h3 className="text-lg font-bold text-neutral-600 mb-2">
-                  {company.name}
-                </h3>
                 <p className="text-sm text-neutral-400 mb-6">
                   {company.description}
                 </p>

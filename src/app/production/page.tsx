@@ -47,7 +47,7 @@ const plants = [
 
 export default function ProductionPage() {
   return (
-    <div className="pt-20">
+    <div className="pt-24">
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary-800 to-primary-600 py-20 md:py-28">
         <div className="mx-auto max-w-[1440px] px-5 md:px-10">
